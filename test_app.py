@@ -1,4 +1,13 @@
-from app import add
+import unittest
+from app import add   # import your function from app.py
 
-def test_add():
-    assert add(2, 3) == 5
+class TestApp(unittest.TestCase):
+
+    def test_add(self):
+        self.assertEqual(add(2, 3), 5)
+
+    def test_add_negative(self):
+        self.assertEqual(add(-1, 1), 0)
+
+if __name__ == "__main__":
+    unittest.main()
